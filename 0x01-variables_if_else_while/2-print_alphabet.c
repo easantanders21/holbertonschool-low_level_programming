@@ -13,12 +13,12 @@ char l = 'a';
 
 do {
 
-printf("%c", l);
+putchar(l);
 l++;
 
 } while (l <= 'z');
 
-printf("\n");
+putchar('\n');
 
 return (0);
 }
