@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _isalpha - Returns 1 if c is lowercase or uppercase.
- * @c: is the value to receive
+ * print_sign  - Returns 1, 0 o -1.
+ * @n: is the value to receive
  *
  * Return: Always 0.
  */
@@ -21,7 +21,7 @@ else if (n < 0)
 _putchar('-');
 p = -1;
 }
- else if (n == 0)
+else if (n == 0)
 {
 _putchar('0');
 p = 0;
