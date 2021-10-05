@@ -2,6 +2,8 @@
 
 /**
  * add - Entry point
+ * @a: sum a
+ * @b: sum b
  *
  * Return: Always suma
  */
