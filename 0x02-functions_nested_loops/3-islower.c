@@ -10,17 +10,17 @@
 int _islower(int c)
 {
 
-char u1 = 'A';
-char u2 = 'Z';
+char u1 = 'a';
+char u2 = 'z';
 int p;
 
-if (c > u1 && c < u2)
+if (c >= u1 && c <= u2)
 {
-p = 0;
+p = 1;
 }
 else
 {
-p = 1;
+p = 0;
 }
 
 return (p);
