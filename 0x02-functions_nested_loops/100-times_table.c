@@ -45,5 +45,5 @@ int a, b, c, d, e, f;
 		{ _putchar(',');
 		_putchar(' ');
 		} } }
-	putchar('\n');
+	_putchar('\n');
 } } }
