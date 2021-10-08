@@ -18,6 +18,9 @@ int _isupper(int c)
 	} else if (c >= 97 && c <= 122)
 	{
 		r = 0;
+	} else
+	{
+		r = 0;
 	}
 
 	return (r);
