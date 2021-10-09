@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 /**
  * main - Fizz Buzz
@@ -25,8 +24,11 @@ printf("Fizz ");
 else if (m5 == 0 && m3 != 0)
 {
 
-printf("Buzz ");
-
+printf("Buzz");
+if (i != 100)
+{
+putchar(' ');
+}
 }
 else if (m3 == 0 && m5 == 0)
 {
