@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 /**
  * main - Largest prime Factor
  *
@@ -6,12 +7,12 @@
  */
 int main(void)
 {
-	long long int num;
-	long long int i;
-	long long int j;
-	long long int p;
-	long long int pnp;
-	long long int comp = 612852475143;
+	long int num;
+	long int i;
+	long int j;
+	long int p;
+	long int pnp;
+	long int comp = 612852475143;
 	int b1 = 0;
 
 num = comp;
@@ -43,6 +44,6 @@ if (comp == 1)
 {
 num = i;
 } }
-printf("%lli\n", i - 1);
+printf("%ld\n", i - 1);
 return (0);
 }
