@@ -1,0 +1,1 @@
+_Pointers - arrays - strings__
