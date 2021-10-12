@@ -10,11 +10,16 @@
 void puts2(char *str)
 {
 	int i = 0;
+	int j = 0;
 
 	while (*(str + i))
 	{
+		j = i % 2;
+		if (j == 0)
+		{
 		putchar (str[i]);
-		i = i + 2;
+		}
+		i++;
 	}
 	putchar ('\n');
 }
