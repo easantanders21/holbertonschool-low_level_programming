@@ -11,7 +11,7 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int j = 0;
-	long int sum = 0;
+	int sum = 0;
 	int b1 = 0;
 	int sig = 0;
 
