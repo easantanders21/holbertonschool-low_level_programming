@@ -11,8 +11,43 @@
 int _strcmp(char *s1, char *s2)
 {
 	int r = 0;
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	int b = 1;
+	int tam;
 
-	r = s1[0] - s2[0];
+	while (*(s1 + j))
+	{
+		j++;
+	}
+
+	while (*(s2 + k))
+	{
+		k++;
+	}
+
+	if (j >= k)
+	{
+		tam = j;
+	} else
+	{
+		tam = k;
+	}
+
+	while (b != 0)
+	{
+		r = s1[i] - s2[i];
+
+		if (r == 0)
+		{
+			i++;
+		}
+		if (r != 0 || i == tam)
+		{
+			b = 0;
+		}
+	}
 
 	return (r);
 }
