@@ -10,17 +10,11 @@
  */
 void reverse_array(int *a, int n)
 {
-	int arr[1000000];
+	long int arr[1000000];
 	int i = 0;
 	int j = 0;
-	int k = 1;
 
-	while (*(a + k))
-	{
-		k++;
-	}
-
-	for (i = 0; i <= n ; i++)
+	for (i = 0; i <= n - 1; i++)
 	{
 		arr[i] = a[i];
 	}
@@ -28,13 +22,6 @@ void reverse_array(int *a, int n)
 	for (j = 0; j <= n; j++)
 	{
 		a[j] = arr[n - j - 1];
-	}
-
-	k = 0;
-
-	while (*(a + k))
-	{
-		k++;
 	}
 
 }
