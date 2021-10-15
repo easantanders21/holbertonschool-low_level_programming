@@ -17,7 +17,7 @@ char *cap_string(char *s)
 		j++;
 	}
 
-	for (i = 0; i < j; i++)
+	for (i = 0; i < j - 1; i++)
 	{
 		if (s[i] == ' ' || s[i] == '\n' || s[i] == ',' || s[i] == ';'
 		|| s[i] == '.' || s[i] == '?' || s[i] == '"' || s[i] == '('
