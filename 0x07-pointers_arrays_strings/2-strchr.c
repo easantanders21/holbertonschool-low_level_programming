@@ -20,7 +20,7 @@ char *_strchr(char *s, char c)
 		if (s[j] == c)
 		{
 			pos = j;
-			s = s + pos;
+			s = &s[pos];
 			b = 1;
 			break;
 		}
