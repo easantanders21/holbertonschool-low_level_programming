@@ -26,10 +26,12 @@ char *_strchr(char *s, char c)
 		}
 		j++;
 	}
+
 	if (b == 0)
 	{
-		s = NULL;
+		s = '\0';
 	}
 
 	return (s);
+
 }
