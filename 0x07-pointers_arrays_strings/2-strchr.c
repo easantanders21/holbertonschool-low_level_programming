@@ -27,11 +27,11 @@ char *_strchr(char *s, char c)
 		j++;
 	}
 
-	if (b == 0)
+	if (b == 1)
 	{
-		return ('\0');
-	} else
-	{
-	return (s);
+		return (s);
 	}
+
+		return ('\0');
+
 }
