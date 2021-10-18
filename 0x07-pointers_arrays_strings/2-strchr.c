@@ -29,8 +29,8 @@ char *_strchr(char *s, char c)
 
 	if (b == 0)
 	{
-		s = '\0';
-	}
+		return ('\0');
+	} else
 
 	return (s);
 
