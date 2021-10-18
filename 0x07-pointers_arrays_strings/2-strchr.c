@@ -11,7 +11,7 @@
 char *_strchr(char *s, char c)
 {
 	unsigned int j;
-	int pos = 0;
+	/*int pos = 0;*/
 	int b = 0;
 
 	j = 0;
@@ -19,8 +19,7 @@ char *_strchr(char *s, char c)
 	{
 		if (s[j] == c)
 		{
-			pos = j;
-			s = &s[pos];
+			/*pos = j;*/
 			b = 1;
 			break;
 		}
@@ -29,6 +28,7 @@ char *_strchr(char *s, char c)
 
 	if (b == 1)
 	{
+		s = &s[j];
 		return (s);
 	}
 
