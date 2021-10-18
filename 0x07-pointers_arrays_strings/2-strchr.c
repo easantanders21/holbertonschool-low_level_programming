@@ -10,9 +10,9 @@
  */
 char *_strchr(char *s, char c)
 {
-	unsigned int j;
+	int j;
 	/*int pos = 0;*/
-	int b = 0;
+	/*int b = 0;*/
 
 	j = 0;
 	while (s[j] != '\0')
@@ -20,13 +20,13 @@ char *_strchr(char *s, char c)
 		if (s[j] == c)
 		{
 			/*pos = j;*/
-			b = 1;
+			/*b = 1;*/
 			break;
 		}
 		j++;
 	}
 
-	if (b == 1)
+	if (s[j] == c)
 	{
 		s = &s[j];
 		return (s);
