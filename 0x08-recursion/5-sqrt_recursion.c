@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _sqrtp - i love you x2
+ * sqrtp - i love you x2
  * @a: num2
  * @b: num3
  *
