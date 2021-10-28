@@ -41,8 +41,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		*(strcon + r) = s2[r - i];
 		if (r == k)
+		{
 			*(strcon + r) = '\0';
-
+			return (strcon);
+		}
 	}
 	*(strcon + r) = '\0';
 	return (strcon);
