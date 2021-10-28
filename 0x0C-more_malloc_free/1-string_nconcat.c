@@ -25,11 +25,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (strcon == NULL)
 		return (NULL);
 
-	for (r = 0; r < i; r++)
+	for (r = 0; r < i && s1; r++)
 	{
 		*(strcon + r) = s1[r];
 	}
-	for (r = i; r <= k; r++)
+	for (r = i; r < k && s2; r++)
 	{
 		*(strcon + r) = s2[r - i];
 	}
