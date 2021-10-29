@@ -6,9 +6,9 @@
  *
  * Return: void.
  */
-void print_number(int n)
+void print_number(long int n)
 {
-	int i, m, tmp;
+	long int i, m, tmp;
 
 	if (n < 0)
 	{
@@ -43,10 +43,9 @@ void print_number(int n)
  */
 int main(int argc, char **argv)
 {
-	int mul;
-	int n1 = atoi(argv[1]);
-	int n2 = atoi(argv[2]);
-	int i, m;
+	long int n1 = atoi(argv[1]);
+	long int n2 = atoi(argv[2]);
+	long int i, m, mul;
 	char *s;
 
 	if (argc != 3)
