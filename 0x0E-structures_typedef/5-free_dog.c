@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include "dog.h"
 /**
  * free_dog - free dog
  * @d: pointer to structure
