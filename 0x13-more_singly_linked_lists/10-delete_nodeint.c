@@ -24,6 +24,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		if (tmp == NULL)
 			return (-1);
 		tmp2 = tmp->next;
+		if (tmp2 == NULL)
+			return (-1);
 		*head = tmp2;
 		free(tmp);
 		return (1);
