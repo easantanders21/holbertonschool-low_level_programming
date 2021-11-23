@@ -24,6 +24,12 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
+	if (text_content == NULL)
+	{
+		close(fd);
+		return (1);
+	}
+
 	while (*(text_content + i))
 	{
 		i++;
