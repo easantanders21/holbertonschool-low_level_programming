@@ -49,6 +49,5 @@ int main(int ac, char **av)
 	if (close(fdO) == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdO);
 		exit(100); }
-
-	return (0);
+	exit(EXIT_SUCCESS);
 }
