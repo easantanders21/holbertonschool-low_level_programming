@@ -1,5 +1,9 @@
-#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -11,22 +15,29 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char caracter;
-	FILE *flujo = fopen(filename, "rb");
-	size_t i = 0;
+	int fd, testw;
+	char *buffer;
+	ssize_t nr_bytes;
 
-	if (flujo == NULL || filename == NULL)
+	if (filename == NULL)
+		return (0);
+
+	buffer = (char *)malloc(letters);
+
+	if (buffer == NULL)
 	{
+		free(buffer);
 		return (0);
 	}
 
-	while (i < letters && feof(flujo) == 0)
-	{
-		caracter = fgetc(flujo);
-		printf("%c", caracter);
-		i++;
-	}
+	fd = open(filename, O_RDONLY);
+	nr_bytes = read(fd, buffer, letters);
+	testw = write(1, buffer, letters);
 
-	fclose(flujo);
-	return (i);
+	if (testw == -1)
+		return (0);
+
+	close(fd);
+	free(buffer);
+	return (nr_bytes);
 }
