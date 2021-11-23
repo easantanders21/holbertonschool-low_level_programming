@@ -16,7 +16,7 @@
 int main(int ac, char **av)
 {
 	int fd1, fd2;
-	char buffer[1024];
+	char buffer[2500];
 	int nr_bytes, testw, testc1, testc2;
 
 	if (ac != 3)
