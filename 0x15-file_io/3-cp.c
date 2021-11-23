@@ -5,7 +5,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
-
+#ifndef BUF_SIZE
+#define BUF_SIZE 1024
+#endif
 /**
  * main - read text file
  * @ac: file name
@@ -15,41 +17,38 @@
  */
 int main(int ac, char **av)
 {
-	int fd1, fd2;
-	char buffer[2500];
-	int nr_bytes, testw, testc1, testc2;
+	int fdI, fdO;
+	char buffer[BUF_SIZE];
+	ssize_t numRead;
 
 	if (ac != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	fd1 = open(av[1], O_RDONLY);
-	nr_bytes = read(fd1, buffer, 1024);
-	if (fd1 == -1 || nr_bytes == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	fd2 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR |
+	{ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97); }
+	fdI = open(av[1], O_RDONLY);
+	if (fdI == -1)
+	{ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+	exit(98); }
+	fdO = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR |
 		S_IRGRP | S_IWGRP | S_IROTH);
-	testw = write(fd2, buffer, nr_bytes);
-	if (fd2 == -1 || testw == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
-	testc1 = close(fd1);
-	testc2 = close(fd2);
-	if (testc1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
-		exit(100);
-	}
-	if (testc2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
-		exit(100);
-	}
-	return (1);
+	if (fdO == -1)
+	{ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99); }
+
+	while ((numRead = read(fdI, buffer, BUF_SIZE)) > 0)
+		if (write(fdO, buffer, numRead) != numRead)
+		{ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99); }
+
+	if (numRead == -1)
+	{ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99); }
+
+	if (close(fdI) == -1)
+	{ dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdI);
+		exit(100); }
+	if (close(fdO) == -1)
+	{ dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdO);
+		exit(100); }
+
+	return (0);
 }
