@@ -2,17 +2,16 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * print_dlistint - Print List
+ * dlistint_len - List length
  * @h: head to list
- * Return: size list
+ * Return: list length
  */
-size_t print_dlistint(const dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
 	size_t i = 0;
 
 	for ( ; h != NULL; i++)
 	{
-		printf("%d\n", h->n);
 		h = h->next;
 	}
 	return (i);
