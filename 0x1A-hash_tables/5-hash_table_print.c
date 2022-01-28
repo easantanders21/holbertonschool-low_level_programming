@@ -5,8 +5,6 @@
 /**
  * hash_table_print - add nodes to table
  * @ht: hash table
- * @key: is a key
- * @value: is the size
  *
  * Return: index value.
  */
