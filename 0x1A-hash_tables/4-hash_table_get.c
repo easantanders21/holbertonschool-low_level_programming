@@ -20,9 +20,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	index = hash_djb2((unsigned char *)key) % ht->size;
 
+	puntero = ht->array[index];
+
 	while (ht->array[index] != NULL)
 	{
-		puntero = ht->array[index];
 		if (strcmp(puntero->key, key) == 0)
 			return (puntero->value);
 		puntero = puntero->next;
