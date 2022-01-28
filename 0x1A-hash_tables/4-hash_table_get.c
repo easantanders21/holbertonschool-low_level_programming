@@ -15,12 +15,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int index = 0;
 	hash_node_t *puntero;
 
+	if (ht == NULL || key == NULL)
+		return (NULL);
+
 	index = hash_djb2((unsigned char *)key) % ht->size;
 
 	while (ht->array[index] != NULL)
 	{
 		puntero = ht->array[index];
-		if (strcmp(puntero->key, key) >= 0)
+		if (strcmp(puntero->key, key) == 0)
 			return (puntero->value);
 		puntero = puntero->next;
 	}
