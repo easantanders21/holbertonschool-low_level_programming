@@ -1,4 +1,4 @@
-# task 2
+# task 2 fix 2
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
