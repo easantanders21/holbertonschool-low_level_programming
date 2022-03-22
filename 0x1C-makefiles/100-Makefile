@@ -3,7 +3,6 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean
@@ -17,6 +16,6 @@ clean:
 oclean:
 	$(RM) *.o
 
-fclean: oclean clean
+fclean: clean oclean
 
 re: fclean all
